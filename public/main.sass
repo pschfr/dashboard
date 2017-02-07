@@ -1,0 +1,28 @@
+@import 'sass/_bootstrap.scss'
+@import 'sass/_mixins_variables.sass'
+
+html
+	position: relative
+	min-height: 100%
+
+body
+	font-family: $sans-font-family
+	margin-top: 10rem
+	margin-bottom: 6rem
+
+footer
+	position: absolute
+	bottom: 0
+	width: 100%
+	height: 6rem
+	p
+		margin: 0
+		padding-top: 2rem
+
+@include media-query($medium-width)
+	ul
+		column-count: 2
+
+@include media-query($small-width)
+	ul
+		column-count: 1
