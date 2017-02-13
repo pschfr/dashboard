@@ -29,17 +29,37 @@ footer
 	-webkit-align-items: center
 	align-items: center
 
+.panels
+	column-count: 3
+
+.panel
+	break-inside: avoid
+
 #time
 	margin-top: 0
 
-#weather
-	margin: 0
+#current
 	text-transform: capitalize
+	h3
+		margin-top: 0
 
 #condition
 	line-height: 1
 	.climacon
 		font-size: 128px
+
+#forecast
+	.day
+		width: 20%
+		display: inline-block
+		text-align: center
+		font-size: 24px
+		line-height: 1
+		.climacon
+			font-size: 48px
+		small
+			font-size: 12px
+
 
 #headlines .panel-body
 	height: 25rem
@@ -51,3 +71,11 @@ footer
 	small
 		font-size: 80%
 		font-style: italic
+
+@include media-query($medium-width)
+	.panels
+		column-count: 2
+
+@include media-query($small-width)
+	.panels
+		column-count: 1
