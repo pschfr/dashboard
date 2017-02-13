@@ -1,4 +1,6 @@
 @import 'sass/_bootstrap.scss'
+@import 'sass/_font_awesome.scss'
+@import 'sass/climacons.scss'
 @import 'sass/_mixins_variables.sass'
 
 html
@@ -6,23 +8,46 @@ html
 	min-height: 100%
 
 body
+	background-color: $light-color
 	font-family: $sans-font-family
-	margin-top: 10rem
-	margin-bottom: 6rem
+	color: $dark-color
+	margin-top: 1.5rem
+	margin-bottom: $footer-height
+
 
 footer
 	position: absolute
 	bottom: 0
 	width: 100%
-	height: 6rem
+	height: $footer-height
 	p
 		margin: 0
-		padding-top: 2rem
 
-@include media-query($medium-width)
-	ul
-		column-count: 2
+.vcenter
+	display: -webkit-flex
+	display: flex
+	-webkit-align-items: center
+	align-items: center
 
-@include media-query($small-width)
-	ul
-		column-count: 1
+#time
+	margin-top: 0
+
+#weather
+	margin: 0
+	text-transform: capitalize
+
+#condition
+	line-height: 1
+	.climacon
+		font-size: 128px
+
+#headlines .panel-body
+	height: 25rem
+	overflow: scroll
+
+
+.list-group-item
+	padding: 5px
+	small
+		font-size: 80%
+		font-style: italic

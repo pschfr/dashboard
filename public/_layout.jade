@@ -4,18 +4,18 @@ html
 		meta(charset="utf-8")
 		meta(http-equiv="X-UA-Compatible" content="IE=edge")
 		meta(name="viewport" content="width=device-width, initial-scale=1")
-		title #{title}
+		title #{title} #{version}
 		if environment == "production"
 			link(rel="stylesheet" href="/dash/main.css")
 		else
 			link(rel="stylesheet" href="/main.css")
 	body
-		!= partial("_partials/_header")
-		.container
+		//- != partial("_partials/_header")
+		.container-fluid
 			.row
 				.col-xs-12
 					!= yield
-		!= partial("_partials/_footer")
+		//- != partial("_partials/_footer")
 		if environment == "production"
 			script(src="/dash/js/app.js")
 		else

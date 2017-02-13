@@ -1,3 +1,40 @@
 .row
-	.col-xs-12
-		h1.text-center It works!
+	.col-sm-6.col-xs-12
+		.panel.panel-primary
+			.panel-heading
+				h3.panel-title
+					i(class='fa fa-dashboard' aria-hidden='true')
+					|  #{title} 
+					span.pull-right #{version}
+			.panel-body.text-center
+				h1#time
+				h4#date
+	.col-sm-6.col-xs-12
+		.panel.panel-info
+			.panel-heading
+				h3.panel-title
+					i(class='fa fa-cloud' aria-hidden='true')
+					|  Weather in 
+					span#location
+			.panel-body
+				.row.vcenter
+					.col-xs-6
+						#weather
+					.col-xs-6
+						#condition.text-center
+	.col-sm-6.col-xs-12
+		.panel.panel-default#headlines
+			.panel-heading
+				h3.panel-title
+					i(class='fa fa-newspaper-o' aria-hidden='true')
+					|  The New York Times Headlines
+			.panel-body
+				ul.list-group#news
+	//- .col-sm-6.col-xs-12
+		.panel.panel-default
+			.panel-heading
+				h3.panel-title
+					i(class='fa fa-envelope' aria-hidden='true')
+					|  Gmail
+			.panel-body
+				#gmail
