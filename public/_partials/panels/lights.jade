@@ -1,0 +1,23 @@
+.panel.panel-warning#lights
+	.panel-heading
+		h3.panel-title
+			i(class='fa fa-lightbulb-o' aria-hidden='true')
+			|  Philips Hue Lights
+	.panel-body
+		button#bedroom.btn.btn-default.light-switch
+			i(class='fa fa-toggle-off fa-2x' aria-hidden='true')
+			br
+			|  Bedroom
+		button#landing.btn.btn-default.light-switch
+			i(class='fa fa-toggle-off fa-2x' aria-hidden='true')
+			br
+			|  Landing
+		button#bothlights.btn.btn-default.light-switch
+			i(class='fa fa-toggle-off fa-2x' aria-hidden='true')
+			br
+			|  Both
+
+if environment == "production"
+	script(src="/dash/js/lights.js")
+else
+	script(src="/js/lights.js")

@@ -24,9 +24,7 @@ footer
 		margin: 0
 
 .vcenter
-	display: -webkit-flex
 	display: flex
-	-webkit-align-items: center
 	align-items: center
 
 .panels
@@ -59,6 +57,16 @@ footer
 			font-size: 48px
 		small
 			font-size: 12px
+
+
+#lights .panel-body
+	display: flex
+	justify-content: space-between
+	.light-switch
+		&.on
+			background-color: #fcf8e3
+		&:focus
+			outline: none
 
 
 #headlines .panel-body

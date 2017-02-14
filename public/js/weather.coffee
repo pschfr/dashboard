@@ -38,6 +38,8 @@ fetchWeather = (lat, lon) ->
 			# console.log(weather)
 	xhr.send(null)
 
+
+
 # Fetch forecast from OpenWeatherMap
 fetchForecast = (lat, lon) ->
 	API_key = 'cb2555990c5309b5ffb90ba6fdea4c62'
@@ -48,6 +50,7 @@ fetchForecast = (lat, lon) ->
 	xhr.open('GET', owm_URL, true)
 	xhr.onreadystatechange = () ->
 		if (xhr.readyState == 4 && xhr.status == 200)
+			element.innerHTML = ''
 			for day in JSON.parse(xhr.responseText).list
 				temp = Math.round(day.main.temp)
 				iconClass = iconIDtoClass(day.weather[0].icon)
@@ -56,6 +59,7 @@ fetchForecast = (lat, lon) ->
 					element.innerHTML += '<div class="day"><small class="text-muted text-uppercase">' + new Date(date).toString().split(' ').slice(1, 3).join(' ') + '</small><br/><i class="climacon ' + iconClass + '" aria-hidden="true"></i><br/>' + temp + '&deg</div>'
 					# console.log(day, temp, iconClass, new Date(date))
 	xhr.send(null)
+
 
 
 # Takes the icon ID from OpenWeatherMap and transforms it into a class I can use
@@ -84,5 +88,7 @@ iconIDtoClass = (iconID) ->
 		iconClass = 'fog'
 	else
 		iconClass = 'cloud'
+
+
 
 geolocWeather()
