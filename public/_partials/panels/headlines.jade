@@ -1,0 +1,12 @@
+.panel.panel-default#headlines
+	.panel-heading
+		h3.panel-title
+			i(class='fa fa-newspaper-o' aria-hidden='true')
+			|  The New York Times Headlines
+	.panel-body
+		ul.list-group#news
+
+if environment == "production"
+	script(src="/dash/js/headlines.js")
+else
+	script(src="/js/headlines.js")

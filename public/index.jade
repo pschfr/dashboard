@@ -1,33 +1,4 @@
 .panels
-	.panel.panel-primary
-		.panel-heading
-			h3.panel-title
-				i(class='fa fa-dashboard' aria-hidden='true')
-				|  #{title} 
-				span.pull-right #{version}
-		.panel-body.text-center
-			h1#time
-			h4#date
-
-	.panel.panel-info
-		.panel-heading
-			h3.panel-title
-				i(class='fa fa-cloud' aria-hidden='true')
-				|  Weather in 
-				span#location
-		.panel-body
-			.row.vcenter
-				.col-xs-6
-					#current
-				.col-xs-6
-					#condition.text-center
-			hr
-			#forecast
-
-	.panel.panel-default#headlines
-		.panel-heading
-			h3.panel-title
-				i(class='fa fa-newspaper-o' aria-hidden='true')
-				|  The New York Times Headlines
-		.panel-body
-			ul.list-group#news
+	!= partial("_partials/panels/time.jade")
+	!= partial("_partials/panels/weather.jade")
+	!= partial("_partials/panels/headlines.jade")

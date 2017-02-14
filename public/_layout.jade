@@ -16,7 +16,3 @@ html
 				.col-xs-12
 					!= yield
 		//- != partial("_partials/_footer")
-		if environment == "production"
-			script(src="/dash/js/app.js")
-		else
-			script(src="/js/app.js")

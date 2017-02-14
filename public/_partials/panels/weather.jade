@@ -1,0 +1,19 @@
+.panel.panel-info
+	.panel-heading
+		h3.panel-title
+			i(class='fa fa-cloud' aria-hidden='true')
+			|  Weather in 
+			span#location
+	.panel-body
+		.row.vcenter
+			.col-xs-6
+				#current
+			.col-xs-6
+				#condition.text-center
+		hr
+		#forecast
+
+if environment == "production"
+	script(src="/dash/js/weather.js")
+else
+	script(src="/js/weather.js")

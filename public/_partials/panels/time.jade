@@ -1,0 +1,14 @@
+.panel.panel-primary
+	.panel-heading
+		h3.panel-title
+			i(class='fa fa-dashboard' aria-hidden='true')
+			|  #{title} 
+			span.pull-right #{version}
+	.panel-body.text-center
+		h1#time
+		h4#date
+
+if environment == "production"
+	script(src="/dash/js/time.js")
+else
+	script(src="/js/time.js")
