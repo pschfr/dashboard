@@ -56,7 +56,7 @@ fetchForecast = (lat, lon) ->
 				iconClass = iconIDtoClass(day.weather[0].icon)
 				date = day.dt_txt
 				if (date.includes('12:00:00'))
-					element.innerHTML += '<div class="day"><small class="text-muted text-uppercase">' + new Date(date).toString().split(' ').slice(1, 3).join(' ') + '</small><br/><i class="climacon ' + iconClass + '" aria-hidden="true"></i><br/>' + temp + '&deg</div>'
+					element.innerHTML += '<div class="day"><small class="text-muted">' + new Date(date).toString().split(' ').slice(0, 1) + '<br>' + new Date(date).toString().split(' ').slice(1, 3).join(' ') + '</small><br/><i class="climacon ' + iconClass + '" aria-hidden="true"></i><br/>' + temp + '&deg</div>'
 					# console.log(day, temp, iconClass, new Date(date))
 	xhr.send(null)
 

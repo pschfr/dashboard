@@ -28,4 +28,6 @@ lastFMrequest = () ->
 			music.innerHTML = '<p style="margin:0"><a href="' + url + '" style="color:inherit">' + song + '<br><small class="text-muted">' + artist + ' &mdash; ' + album + '</small></a></p>'
 	xhr.send(null)
 
+	t = setTimeout(lastFMrequest, 120000) # refresh every 2 min
+
 lastFMrequest()

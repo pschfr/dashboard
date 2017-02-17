@@ -12,10 +12,10 @@ body
 	font-family: $sans-font-family
 	color: $dark-color
 	margin-top: 1.5rem
-	margin-bottom: $footer-height
+	// margin-bottom: $footer-height
 
 
-footer
+// footer
 	position: absolute
 	bottom: 0
 	width: 100%
@@ -32,12 +32,22 @@ footer
 
 .panel
 	break-inside: avoid
+	.panel-heading
+		cursor: pointer
+		user-select: none
+	.panel-body
+		transition: all 0.4s ease-out
+	&.closed
+		.panel-body
+			opacity: 0
+			padding: 0
+			max-height: 0
+			overflow: hidden
 
 #time
 	margin-top: 0
 
 #current
-	text-transform: capitalize
 	h3
 		margin-top: 0
 
@@ -57,6 +67,7 @@ footer
 			font-size: 48px
 		small
 			font-size: 12px
+			line-height: 1
 
 
 #lights .panel-body
