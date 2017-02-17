@@ -28,7 +28,7 @@ footer
 	align-items: center
 
 .panels
-	column-count: 3
+	column-count: 4
 
 .panel
 	break-inside: avoid
@@ -79,6 +79,10 @@ footer
 	small
 		font-size: 80%
 		font-style: italic
+
+@include media-query($large-width)
+	.panels
+		column-count: 3
 
 @include media-query($medium-width)
 	.panels

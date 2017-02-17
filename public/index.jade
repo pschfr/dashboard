@@ -1,6 +1,7 @@
 .panels
 	!= partial("_partials/panels/time.jade")
-	!= partial("_partials/panels/weather.jade")
 	if environment != "production"
 		!= partial("_partials/panels/lights.jade")
+	!= partial("_partials/panels/weather.jade")
 	!= partial("_partials/panels/headlines.jade")
+	!= partial("_partials/panels/lastfm.jade")

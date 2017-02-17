@@ -1,0 +1,14 @@
+.panel.panel-info
+	.panel-heading
+		h3.panel-title
+			i(class='fa fa-music' aria-hidden='true')
+			span 
+				span#title
+	.panel-body
+		#image
+		#music
+
+if environment == "production"
+	script(src="/dash/js/lastfm.js")
+else
+	script(src="/js/lastfm.js")
