@@ -10,12 +10,10 @@ html
 		else
 			link(rel="stylesheet" href="/main.css")
 	body
-		//- != partial("_partials/_header")
 		.container-fluid
 			.row
 				.col-xs-12
 					!= yield
-		//- != partial("_partials/_footer")
 		if environment == "production"
 			script(src="/dash/js/global.js")
 		else

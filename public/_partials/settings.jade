@@ -1,0 +1,12 @@
+.panel.panel-default.closed#settings
+	.panel-heading
+		h3.panel-title
+			i(class='fa fa-cogs' aria-hidden='true')
+			|  Settings
+	.panel-body
+		p.text-muted.text-center Nothing to see here yet&hellip;
+
+if environment == "production"
+	script(src="/dash/js/settings.js")
+else
+	script(src="/js/settings.js")

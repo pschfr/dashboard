@@ -19,9 +19,9 @@ lastFMrequest = () ->
 			imgURL = track.image[3]['\#text']
 
 			if track['\@attr'] and track['\@attr'].nowplaying != ''
-				title.innerHTML = 'Now Playing'
+				title.innerHTML = ' Now Playing'
 			else
-				title.innerHTML = 'Last Song'
+				title.innerHTML = ' Last Song'
 
 			if imgURL
 				image.innerHTML = '<img src="' + imgURL + '" alt="' + album + '" title="' + album + '" class="thumbnail" style="width:100%">'
