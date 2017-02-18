@@ -10,8 +10,9 @@ getHeadlines = () ->
 			times = JSON.parse(xhr.responseText)
 			# console.log(times)
 			for article in times.results
-				document.getElementById('news').innerHTML += '<li class="list-group-item"><a href="' + article.url + '" title="' + article.abstract + '">' + article.title + ' <small>' + article.byline.replace('By ', ' &mdash; ') + '</small></a></li>'
-				# console.log(article)
+				if !article.title.includes('Briefing') and !article.title.includes('briefing')
+					document.getElementById('news').innerHTML += '<li class="list-group-item"><a href="' + article.url + '" title="' + article.abstract + '">' + article.title + ' <small>' + article.byline.replace('By ', ' &mdash; ') + '</small></a></li>'
+					# console.log(article)
 	xhr.send(null)
 
 getHeadlines()
