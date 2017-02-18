@@ -3,8 +3,12 @@
 		h3.panel-title
 			i(class='fa fa-cogs' aria-hidden='true')
 			|  Settings
-	.panel-body
-		p.text-muted.text-center Nothing to see here yet&hellip;
+	.panel-body.text-center
+		button#lightDark.btn.btn-default.light-switch
+			i(class='fa fa-sun-o fa-2x' aria-hidden='true')
+			br
+			span#lightDarkState Light
+		
 
 if environment == "production"
 	script(src="/dash/js/settings.js")

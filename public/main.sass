@@ -12,6 +12,15 @@ body
 	font-family: $sans-font-family
 	color: $dark-color
 	margin-top: 1.5rem
+	transition: all 0.25s
+	&.dark
+		background-color: darken($dark-color, 15%)
+		color: $light-color
+		.panel, .btn, .thumbnail, .list-group-item
+			background-color: $dark-color
+			color: $light-color
+			a, small, .text-muted
+				color: inherit
 
 .vcenter
 	display: flex
@@ -28,6 +37,8 @@ body
 	.panel-body
 		transition: all 0.4s ease-out
 	&.closed
+		.panel-heading
+			opacity: 0.5
 		.panel-body
 			opacity: 0
 			padding: 0
