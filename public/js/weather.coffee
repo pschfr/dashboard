@@ -8,7 +8,7 @@ geolocWeather = () ->
 	else
 		fetchWeather('40.4406', '-79.9959')
 		fetchForecast('40.4406', '-79.9959')
-	t = setTimeout(geolocWeather, 900000) # Every 15 min
+	t = setTimeout(geolocWeather, 300000) # Every 5 min
 
 
 
