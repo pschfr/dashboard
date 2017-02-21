@@ -5,9 +5,16 @@ currentTime = () ->
 	now = new Date()
 	if (now.getHours() >= 12)
 		ampm = 'PM'
+		hours = now.getHours() % 12
+		if hours == 0
+			hours = 12
 	else
+		if (now.getHours() == 0)
+			hours = 12
+		else
+			hours = now.getHours()
 		ampm = 'AM'
-	timeString = (now.getHours() % 12) + ':' + now.getMinutes().toString().replace(/\b(\d)\b/g, '0$1') + ':' + now.getSeconds().toString().replace(/\b(\d)\b/g, '0$1') + ' ' + ampm
+	timeString = hours + ':' + now.getMinutes().toString().replace(/\b(\d)\b/g, '0$1') + ':' + now.getSeconds().toString().replace(/\b(\d)\b/g, '0$1') + ' ' + ampm
 	dateString = dayNames[now.getDay()] + ' ' + monthNames[(now.getMonth())] + ' ' + now.getDate() + ', ' + now.getFullYear()
 	document.getElementById('time').innerHTML = timeString
 	document.getElementById('date').innerHTML = dateString
