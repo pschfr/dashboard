@@ -4,8 +4,6 @@ if unit == null
 	unit = 'imperial'
 API_key = 'cb2555990c5309b5ffb90ba6fdea4c62'
 
-console.log(unit)
-
 # Attempt to geolocate user
 geolocWeather = () ->
 	if ('geolocation' in navigator) # I don't know if this works
