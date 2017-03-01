@@ -11,7 +11,7 @@ getHeadlines = () ->
 			# console.log(times)
 			for article in times.results
 				if !article.title.includes('Briefing') and !article.title.includes('briefing')
-					document.getElementById('news').innerHTML += '<li class="list-group-item"><a href="' + article.url + '" title="' + article.abstract + '">' + article.title + ' <small>' + article.byline.replace('By ', ' &mdash; ') + '</small></a></li>'
+					document.getElementById('news').innerHTML += '<a href="' + article.url + '" title="' + article.abstract + "\n" + article.byline + '">' + article.title + '</a> &mdash; '
 					# console.log(article)
 	xhr.send(null)
 	t = setTimeout(getHeadlines, 3600000) # refresh once an hour

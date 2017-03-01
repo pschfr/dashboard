@@ -11,7 +11,7 @@ body
 	background-color: $light-color
 	font-family: $sans-font-family
 	color: $dark-color
-	margin-top: 1.5rem
+	margin: 1.5rem 0 $footer-height 0
 	transition: all 0.25s
 	&.dark
 		background-color: black
@@ -22,6 +22,20 @@ body
 			color: $light-color
 			a, small, .text-muted
 				color: inherit
+
+footer
+	position: absolute
+	bottom: 0
+	width: 100%
+	height: $footer-height
+	#news
+		background-color: black
+		height: $footer-height
+		padding-top: $footer-height / 4
+		color: $light-color
+		font-weight: bold
+		a
+			color: inherit
 
 .vcenter
 	display: flex
