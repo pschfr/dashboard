@@ -8,7 +8,11 @@
 			i(class='fa fa-sun-o fa-2x' aria-hidden='true')
 			br
 			span#lightDarkState Light
-		
+		button#tempUnit.btn.btn-default.temp-unit(style='margin-left:30px')
+			i(class='fa fa-thermometer-full fa-2x' aria-hidden='true')
+			br
+			span#tempUnitState Fahrenheit
+
 
 if environment == "production"
 	script(src="/dash/js/settings.js")

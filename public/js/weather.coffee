@@ -1,3 +1,11 @@
+# Global variables
+unit = localStorage.getItem('temp-unit')
+if unit == null
+	unit = 'imperial'
+API_key = 'cb2555990c5309b5ffb90ba6fdea4c62'
+
+console.log(unit)
+
 # Attempt to geolocate user
 geolocWeather = () ->
 	if ('geolocation' in navigator) # I don't know if this works
@@ -14,8 +22,7 @@ geolocWeather = () ->
 
 # Fetch weather from OpenWeatherMap
 fetchWeather = (lat, lon) ->
-	API_key = 'cb2555990c5309b5ffb90ba6fdea4c62'
-	owm_URL = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&APPID=' + API_key + '&units=imperial'
+	owm_URL = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&APPID=' + API_key + '&units=' + unit
 	xhr = new XMLHttpRequest()
 
 	xhr.open('GET', owm_URL, true)
@@ -42,8 +49,7 @@ fetchWeather = (lat, lon) ->
 
 # Fetch forecast from OpenWeatherMap
 fetchForecast = (lat, lon) ->
-	API_key = 'cb2555990c5309b5ffb90ba6fdea4c62'
-	owm_URL = 'http://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&APPID=' + API_key + '&units=imperial'
+	owm_URL = 'http://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&APPID=' + API_key + '&units=' + unit
 	element = document.getElementById('forecast')
 	xhr = new XMLHttpRequest()
 
