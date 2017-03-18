@@ -28,12 +28,20 @@ footer
 	bottom: 0
 	width: 100%
 	height: $footer-height
+	overflow: hidden
 	#news
 		background-color: black
-		height: $footer-height
+		position: absolute
+		white-space: nowrap
+		height: 100%
 		padding-top: $footer-height / 4
 		color: $light-color
 		font-weight: bold
+		animation: marquee 30s linear infinite
+		backface-visibility: hidden
+		perspective: 1000
+		&:hover
+			animation-play-state: paused
 		a
 			color: inherit
 
@@ -120,3 +128,9 @@ footer
 @include media-query($small-width)
 	.panels
 		column-count: 1
+
+@keyframes marquee
+	from
+		left: 0
+	to
+		left: -100%

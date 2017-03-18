@@ -11,7 +11,4 @@
 		hr
 		#forecast.text-uppercase
 
-if environment == "production"
-	script(src="/dash/js/weather.js")
-else
-	script(src="/js/weather.js")
+script(src=(environment == 'production' ? '/dash/js/weather.js' : '/js/weather.js'))

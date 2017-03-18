@@ -7,7 +7,4 @@
 		#image
 		#music Loading&hellip;
 
-if environment == "production"
-	script(src="/dash/js/lastfm.js")
-else
-	script(src="/js/lastfm.js")
+script(src=(environment == 'production' ? '/dash/js/lastfm.js' : '/js/lastfm.js'))

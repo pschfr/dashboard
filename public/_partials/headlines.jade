@@ -1,7 +1,4 @@
 footer.text-uppercase
-	marquee(scrollamount="4")#news
+	#news
 
-if environment == "production"
-	script(src="/dash/js/headlines.js")
-else
-	script(src="/js/headlines.js")
+script(src=(environment == 'production' ? '/dash/js/headlines.js' : '/js/headlines.js'))

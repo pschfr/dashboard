@@ -17,7 +17,4 @@
 			br
 			|  Both
 
-if environment == "production"
-	script(src="/dash/js/lights.js")
-else
-	script(src="/js/lights.js")
+script(src=(environment == 'production' ? '/dash/js/lights.js' : '/js/lights.js'))

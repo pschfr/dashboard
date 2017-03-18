@@ -13,8 +13,4 @@
 			br
 			span#tempUnitState Fahrenheit
 
-
-if environment == "production"
-	script(src="/dash/js/settings.js")
-else
-	script(src="/js/settings.js")
+script(src=(environment == 'production' ? '/dash/js/settings.js' : '/js/settings.js'))
