@@ -1,0 +1,9 @@
+.panel.panel-warning#notes
+	.panel-heading
+		h3.panel-title
+			i(class='fa fa-pencil-square-o' aria-hidden='true')
+			|  Notepad
+	.panel-body
+		textarea.form-control#notepad
+
+script(src=(environment == 'production' ? '/dash/js/notepad.js' : '/js/notepad.js'))
