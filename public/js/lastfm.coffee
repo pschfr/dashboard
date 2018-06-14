@@ -25,6 +25,8 @@ lastFMrequest = () ->
 
 			if imgURL
 				image.innerHTML = '<img src="' + imgURL + '" alt="' + album + '" title="' + album + '" class="thumbnail" style="width:100%">'
+			else
+				image.innerHTML = '<img src="/img/no-cover.png" alt="No Image" class="thumbnail" style="width:100%">'
 			music.innerHTML = '<p style="margin:0"><a href="' + url + '" style="color:inherit">' + song + '<br><small class="text-muted">' + artist + ' &mdash; ' + album + '</small></a></p>'
 	xhr.send(null)
 
