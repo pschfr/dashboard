@@ -39,7 +39,7 @@ fetchWeather = (lat, lon) ->
 
 			document.getElementById('condition').innerHTML = '<i class="climacon ' + iconClass + '" aria-hidden="true"></i>'
 			document.getElementById('current').innerHTML = '<h3>' + temperature + '&deg;<br/> ' + condition + '</h3><p class="text-muted">' + windSpeed + 'mph ' + windDir + '<br/>' + humidity + '% humidity</p>'
-			document.getElementById('location').innerHTML = location
+			document.getElementById('location').innerHTML = '<a href="https://www.openweathermap.org/city/' + weather.id + '" target="_blank">' + location + '</a>'
 			# console.log(weather)
 	xhr.send(null)
 
