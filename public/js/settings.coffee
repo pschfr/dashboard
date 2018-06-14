@@ -53,6 +53,8 @@ setTempUnit = () ->
 		else
 			setImperial()
 			localStorage.setItem('temp-unit', 'imperial')
+
+		location.reload()
 	)
 
 # Sets unit to metric
