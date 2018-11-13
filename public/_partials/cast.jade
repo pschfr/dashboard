@@ -1,0 +1,15 @@
+.panel.panel-warning#cast
+	.panel-heading
+		h3.panel-title
+			i(class='fa fa-lightbulb-o' aria-hidden='true')
+			|  Google Cast
+	.panel-body.text-center
+		#cast-image(style="display:none")
+			img(src="/img/no-cover.png" alt="No Image" class="thumbnail" style="width:100%")
+		p.text-muted#cast-playing Nothing is casting.
+
+		button#cast-play-pause.btn.btn-default(style="display:none")
+			i(class='fa fa-pause fa-2x' aria-hidden='true')
+			i(class='fa fa-play fa-2x' aria-hidden='true')
+
+script(src=(environment == 'production' ? '/dash/js/cast.js' : '/js/cast.js'))

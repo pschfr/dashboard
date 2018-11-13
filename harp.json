@@ -1,7 +1,7 @@
 {
 	"globals": {
 		"title": "Dashboard",
-		"version": "1.6",
+		"version": "1.7",
 		"githubURL": "https://github.com/pschfr/dashboard"
 	}
 }
