@@ -9,24 +9,30 @@ fetchDevices = () ->
 	xhr.open('GET', cast_api_url + 'device/connected', true)
 	xhr.onreadystatechange = () ->
 		if xhr.readyState == 4 && xhr.status == 200
-			for device in JSON.parse(xhr.responseText)
-				console.log device
-				if device.status.title
-					nowplaying += device.status.title + ' — ' + device.status.subtitle
-				else
-					nowplaying += 'Nothing is casting.'
-				if device.status.image
-					document.getElementById('cast-image').style.display = 'block'
-					document.getElementById('cast-image').innerHTML = image.innerHTML = '<img src="' + device.status.image + '" alt="' + device.status.title + '" title="' + device.status.title + '" class="thumbnail" style="width:100%">'
-				nowplaying += '<br/><br/><small>Connected to: ' + device.status.application + ' on ' + device.name + '</small>'
-				document.getElementById('cast-playing').innerHTML = nowplaying
-				if device.status.title
-					document.getElementById('cast-play-pause').setAttribute('cast-id', device.id)
-					document.getElementById('cast-play-pause').setAttribute('cast-state', device.status.status)
-					document.getElementById('cast-play-pause').style.display = 'inline-block'
-					document.getElementById('cast-play-pause').getElementsByClassName('fa-play')[0].style.display = 'none'
-				else
-					document.getElementById('cast-play-pause').style.display = 'none'
+			if JSON.parse(xhr.responseText).length
+				for device in JSON.parse(xhr.responseText)
+					# console.log device
+					if device.status.title
+						nowplaying += device.status.title + ' — ' + device.status.subtitle
+					else
+						nowplaying += 'API is connected, nothing is casting.'
+					if device.status.image
+						document.getElementById('cast-image').style.display = 'block'
+						document.getElementById('cast-image').innerHTML = image.innerHTML = '<img src="' + device.status.image + '" alt="' + device.status.title + '" title="' + device.status.title + '" class="thumbnail" style="width:100%">'
+					nowplaying += '<br/><br/><small>Connected to: ' + device.status.application + ' on ' + device.name + '</small>'
+					if device.status.title
+						document.getElementById('cast-play-pause').setAttribute('cast-id', device.id)
+						document.getElementById('cast-play-pause').setAttribute('cast-state', device.status.status)
+						document.getElementById('cast-play-pause').style.display = 'inline-block'
+						document.getElementById('cast-play-pause').getElementsByClassName('fa-play')[0].style.display = 'none'
+					else
+						document.getElementById('cast-play-pause').style.display = 'none'
+			else
+				nowplaying += 'API is connected, nothing is casting.'
+				console.log 'here', nowplaying
+		else
+			nowplaying += 'API connection failed.'
+		document.getElementById('cast-playing').innerHTML = nowplaying
 	xhr.send(null)
 fetchDevices()
 
