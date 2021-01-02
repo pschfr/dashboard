@@ -1,0 +1,9 @@
+[
+	{
+		// App 1
+		"append": true,
+		"watch": true,
+		"uid": "cast_api",
+		"script": "node_modules/cast-web-api/castWebApi.js"
+	}
+]

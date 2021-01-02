@@ -1,0 +1,26 @@
+{
+  "name": "dashboard",
+  "author": "Paul Schaefer <yeppaul2@gmail.com> (https://paulmakesthe.net/)",
+  "version": "1.7.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pschfr/dashboard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pschfr/dashboard/issues"
+  },
+  "homepage": "https://github.com/pschfr/dashboard",
+  "description": "Made with harp and some magic ✨",
+  "dependencies": {
+    "cast-web-api": "github:pschfr/cast-web-api",
+    "forever": "^3.0.4",
+    "harp": "^0.33.0"
+  },
+  "scripts": {
+    "serve": "harp server",
+    "cast": "forever start ./forever.json",
+    "stop": "forever stop cast_api",
+    "start": "npm run cast; npm run serve"
+  }
+}
