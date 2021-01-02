@@ -7,10 +7,10 @@ switches = document.getElementsByClassName('light-switch')
 # Check light state, appending class to buttons if necessary
 checkState = (light) ->
 	xhr = new XMLHttpRequest()
-	if light.id.toString() == 'seahorse' || light.id.toString() == 'bedroom'
-		if light.id.toString() == 'seahorse'
+	if light.id.toString() == 'overhead2' || light.id.toString() == 'overhead1'
+		if light.id.toString() == 'overhead2'
 			xhr.open('GET', api_url + '/lights/1', true)
-		else if light.id.toString() == 'bedroom'
+		else if light.id.toString() == 'overhead1'
 			xhr.open('GET', api_url + '/lights/2', true)
 		xhr.onreadystatechange = () ->
 			if xhr.readyState == 4 && xhr.status == 200
@@ -39,10 +39,10 @@ for light in switches
 # Turns light on!
 turnOn = (light, brightness) ->
 	xhr = new XMLHttpRequest()
-	if (light == 'seahorse')
+	if (light == 'overhead2')
 		xhr.open('PUT', api_url + '/lights/1/state', true)
 		xhr.send(JSON.stringify({on: true, bri: brightness}))
-	else if (light == 'bedroom')
+	else if (light == 'overhead1')
 		xhr.open('PUT', api_url + '/lights/2/state', true)
 		xhr.send(JSON.stringify({on: true, bri: brightness}))
 	else if (light == 'bothlights')
@@ -52,10 +52,10 @@ turnOn = (light, brightness) ->
 # Turns light off...
 turnOff = (light) ->
 	xhr = new XMLHttpRequest()
-	if (light == 'seahorse')
+	if (light == 'overhead2')
 		xhr.open('PUT', api_url + '/lights/1/state', true)
 		xhr.send(JSON.stringify({on: false}))
-	else if (light == 'bedroom')
+	else if (light == 'overhead1')
 		xhr.open('PUT', api_url + '/lights/2/state', true)
 		xhr.send(JSON.stringify({on: false}))
 	else if (light == 'bothlights')
